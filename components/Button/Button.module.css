@@ -1,0 +1,17 @@
+.button {
+    display: inline-block;
+    color: black;
+    font-weight: 700;
+    padding: .5em 2em;
+    outline: none;
+    border: 1px solid;
+    border-radius: 1px;
+    transition: 0.2s;
+    margin: 5px;
+}
+.button:hover { 
+    background: rgb(200,200,200);
+ }
+.button:active {
+    background: white;
+}
