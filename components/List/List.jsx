@@ -1,11 +1,12 @@
 import React from "react";
-import css from './List.module.css'
+import css from './List.module.css';
+import { ImageWithLink } from "../ImageWithLink/ImageWithLink";
 
 export const List = ({ content }) => {
     return (
-        <div className={css.a}>
+        <div className={css.gallery}>
             {content.map((el, i) =>
-                (<img key={i} src={el.url} alt={el.title}/>))
+                (<ImageWithLink key={i} href={el.id} src={el.url} alt={el.title}/>))
             }
         </div>
     );

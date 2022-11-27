@@ -1,7 +1,8 @@
-.a img {
-    width: 100px;
-    height: 100px;
-    box-shadow: 4px 4px 20px 0 rgba(0,0,0,.25);
-    border-radius: 4px;
-    margin: 10px;
-  }
+.gallery {
+    margin: 50px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    padding: 30px;
+    padding-left: auto;
+    padding-right: auto;
+}
