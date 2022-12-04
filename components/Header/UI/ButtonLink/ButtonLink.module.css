@@ -1,0 +1,9 @@
+.link {
+    text-decoration: none;
+    color: var(--text-color);
+    float: left;
+}
+
+.link:hover {
+    color:darkslategrey;
+}

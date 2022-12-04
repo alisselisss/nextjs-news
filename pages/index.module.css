@@ -1,0 +1,16 @@
+.main__logo {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.main__title {
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px;
+    align-items: center;
+}
