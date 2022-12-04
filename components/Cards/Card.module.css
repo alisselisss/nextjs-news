@@ -1,0 +1,30 @@
+.card {
+    width: 100%;
+    background-color: var(--background-color);
+    min-height: 150px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px -5px;
+}
+
+.card__image {
+    position: relative;
+    min-height: 40px;
+}
+
+.card__image img {
+    width: 80%;
+    max-height: 500px;
+    object-fit: cover;
+    margin: 30px;
+    border-radius: 3px;
+}
+
+.card__about {
+    display: flex;
+    gap: 30px;
+    margin-left: 20px;
+}
+
+.card__content {
+    padding-left: 30px;
+}
