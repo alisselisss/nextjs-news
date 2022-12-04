@@ -1,7 +1,19 @@
-body {
-    background-color:aliceblue;
+:root {
+    --main-color: #daddb8;
+    --text-color: #78866b;
+    --secondary-color: #ff4f00;
+    --width: 1380px;
+    --background-color: #faebd7;
 }
 
-.add-img {
-    margin-left: 50px;
+html {
+    font-size: 18px;
+}
+
+body {
+    background-color:#fdf5e6;
+    color: var(--text-color);
+    font-family: "DejaVu Sans Mono", monospace;
+    max-width: var(--width);
+    margin: auto;
 }
