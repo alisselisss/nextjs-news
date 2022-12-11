@@ -23,8 +23,28 @@
     display: flex;
     gap: 30px;
     margin-left: 20px;
+    flex-wrap: wrap;
+    font-style: italic;
 }
 
 .card__content {
     padding-left: 30px;
+}
+
+.card_description {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.card_description h2 {
+    color: var(--secondary-color);
+}
+
+.card_description p {
+    color: var(--p-color);
+}
+
+.card_description h2:hover {
+    text-decoration: underline;
 }

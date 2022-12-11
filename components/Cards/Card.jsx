@@ -1,20 +1,24 @@
 import React from 'react';
 import css from './Card.module.css'
-import Image from 'next/image';
+import Link from 'next/link';
 
-export const Card = ({ title, img, date, author, description }) => {
+export const Card = ({ title, id, media, published_date, adx_keywords, abstract}) => {
   return (
     <div className={css.card}>
         <div className={css.card__image}>
-            <img fill src={img}/>
+        {media[0] && <img src={media[0]["media-metadata"][2].url}/>}
         </div>
         <div className={css.card__content}>
             <div className={css.card__about}>
-                <span>{author}</span>|
-                <span>{date}</span>
+                {adx_keywords.split(";").map(kw => (
+                  <span>{kw}</span>
+                ))}
+                <span>{published_date}</span>
             </div>
-            <h2>{title}</h2>
-            <p>{description}</p>
+            <Link href={`/blog/${id}`} className={css.card_description}>
+              <h2>{title}</h2>
+              <p>{abstract}</p>
+            </Link>
       </div>
     </div>
   )
