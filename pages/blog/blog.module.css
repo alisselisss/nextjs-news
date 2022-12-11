@@ -1,0 +1,27 @@
+.main__logo {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.main__title {
+    text-align: center;
+}
+
+.card {
+    text-align: center;
+    padding: 50px;
+}
+.card__image img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card__image span {
+    margin-left: 20px;
+    flex-wrap: wrap;
+    font-style: italic;
+}
+
+.text {
+    color: var(--p-color);
+}
