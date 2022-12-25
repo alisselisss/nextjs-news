@@ -3,8 +3,38 @@ import { Layout } from "../components/Layout/Layout";
 import { Nav } from "../components/Header/Nav/Nav";
 import css from './index.module.css';
 import { Card } from "../components/Cards/Card";
+import { getFetch } from "../utils/Fetch";
+import { getCookie, setCookie } from "../utils/setCookies";
+import { send } from "process";
+
 
 export default function IndexPage({ data }) {
+    const [userInfo, setUserInfo] = useState({ email: "", name: "" });
+    useEffect(() => {
+        const sendUser = () => {
+            getFetch("https://norma.nomoreparties.space/api/auth/user", getCookie("accessToken")).then(
+                res => {
+                    setUserInfo({ 
+                        email: res.user.email,
+                        name: res.user.name,
+                    });
+                }
+            );
+        };
+        if (getCookie("refreshToken")) {
+            if (!getCookie("accessToken")) {
+                getFetch("https://norma.nomoreparties.space/api/auth/token", {
+                    token : getCookie("refreshToken"),
+                }).then(res => {
+                    setCookie("accessToken", res.accessToken, 1);
+                    setCookie("refreshToken", res.refreshToken);                    
+                })
+                return;
+            } 
+            sendUser();    
+        }
+    }, []);
+    
     return (
     <Layout title="Главная">
         <header>
@@ -12,7 +42,7 @@ export default function IndexPage({ data }) {
         </header>
         <main className={css.main}>
             <div className={css.main__title}>
-                <h1 className={css.main__logo}>Мой Блог</h1>
+                <h1 className={css.main__logo}>Hello, {userInfo.name}!</h1>
             </div>
             <section className={css.cards}>
                 {data.map((el) => (

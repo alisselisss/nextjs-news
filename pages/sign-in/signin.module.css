@@ -1,0 +1,20 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: min(100%, 600px);
+    gap: 10px;
+}
+
+.form__inputs {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form a {
+    color:darkslategray;
+}
