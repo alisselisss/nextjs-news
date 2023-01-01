@@ -2,10 +2,14 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { Layout } from '../../components/Layout/Layout';
 import { Nav } from "../../components/Header/Nav/Nav";
-import css from './blog.module.css'
+import css from './blog.module.css';
+import ErrorPage from 'next/error';
 
 const BlogPage = props => {
     const router = useRouter();
+    if (!router.isFallback) {
+        return <ErrorPage statusCode={404} />
+    }
     if (router.isFallback) return <h1>Loading..</h1>
     return (
         <Layout title={props.title}>
