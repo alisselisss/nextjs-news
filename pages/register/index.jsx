@@ -9,16 +9,16 @@ import { setCookie } from '../../utils/setCookies';
 import css from "../sign-in//signin.module.css"
 
 
-const index = () => {
-  const[email, setEmail] = useState();
-  const[password, setPassword] = useState();
-  const[name, setName] = useState();
-  const[isLoading, setLoading] = useState();
+const Register = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [isLoading, setLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     router.prefetch("/");
-  })
+  }, [])
 
   function FormHandler(e) {
     e.preventDefault();
@@ -53,4 +53,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Register;

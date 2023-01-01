@@ -19,8 +19,8 @@ const BlogPage = props => {
             <section className={css.card}>
                 <div className={css.card__image}>
                     {props.media[0] && <img src={props.media[0]["media-metadata"][2].url}/>}<br />
-                    {props.adx_keywords.split(";").map(kw => (
-                        <span>{kw}</span>
+                    {props.adx_keywords.split(";").map((kw, i) => (
+                        <span key={i}>{kw}</span>
                     ))}
                     <br/><span>{props.published_date}</span>
                 </div>
