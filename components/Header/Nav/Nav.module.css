@@ -1,0 +1,22 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 50 px);
+    margin: auto;
+    align-items: center;
+}
+
+.nav__logo {
+    text-transform: uppercase;
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-left: 30px;
+    font-size: 33px;;
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-right: 30px;
+}
