@@ -7,9 +7,8 @@ import ErrorPage from 'next/error';
 
 const BlogPage = props => {
     const router = useRouter();
-    if (!router.isFallback) {
-        return <ErrorPage statusCode={404} />
-    }
+    console.log(props.hasOwnProperty('id'), props);
+    if (!props.hasOwnProperty('id')) return <ErrorPage statusCode={404} />
     if (router.isFallback) return <h1>Loading..</h1>
     return (
         <Layout title={props.title}>
