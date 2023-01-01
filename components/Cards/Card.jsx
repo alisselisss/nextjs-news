@@ -10,8 +10,8 @@ export const Card = ({ title, id, media, published_date, adx_keywords, abstract}
         </div>
         <div className={css.card__content}>
             <div className={css.card__about}>
-                {adx_keywords.split(";").map(kw => (
-                  <span>{kw}</span>
+                {adx_keywords.split(";").map((kw, i) => (
+                  <span key={i}>{kw}</span>
                 ))}
                 <span>{published_date}</span>
             </div>

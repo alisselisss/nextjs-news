@@ -10,3 +10,8 @@
 .button:hover {
     background-color:var(--main-color) ;
 }
+
+.button:disabled {
+    cursor: no-drop;
+    background-color: var(--background-color);
+}
