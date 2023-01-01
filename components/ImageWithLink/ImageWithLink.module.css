@@ -1,0 +1,7 @@
+.im {
+    width: 300px;
+    height: 300px;
+    box-shadow: 4px 4px 20px 0 rgba(0,0,0,.25);
+    border-radius: 4px;
+    margin: 10px;
+  }
