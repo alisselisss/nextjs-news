@@ -8,6 +8,9 @@ export const Nav = () => {
         <h1 className={css.nav__logo}>Logo</h1>
         <ul className={css.nav__list}>
             <li>
+                <ButtonLink href="/">Главная</ButtonLink>
+            </li>
+            <li>
                 <ButtonLink href="/profile">Профиль</ButtonLink>
             </li>
             <li>
