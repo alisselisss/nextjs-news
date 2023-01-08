@@ -37,10 +37,10 @@ const BlogPage = props => {
 
 export default BlogPage;
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const pageId = context.params.id;
     const pages = await fetch(`https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=FgGw48IcXAuede23OyMRlSUwvHPzeXDD`).then(res => res.json());
-
+    
     for (var i = 0; i < pages.num_results; i++) {
         if (pages.results[i].id == pageId) 
             return {
@@ -52,8 +52,8 @@ export async function getStaticProps(context) {
     }
 }
 
-export async function getStaticPaths() {
-    const pages= await fetch("https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json?api-key=FgGw48IcXAuede23OyMRlSUwvHPzeXDD").then(res => res.json());
+/*export async function getStaticPaths() {
+    const pages = await fetch("https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json?api-key=FgGw48IcXAuede23OyMRlSUwvHPzeXDD").then(res => res.json());
     const res = Array.from(pages.results).map((el) => {
         return { params: {id: String(el.id) } }
     })
@@ -61,4 +61,4 @@ export async function getStaticPaths() {
         paths: res,
         fallback: true,
     }
-}
+}*/
